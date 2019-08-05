@@ -12,10 +12,11 @@ const forecast = (latitude, longitude, callback) => {
     } else {
         const temp = (body.currently.temperature)
         const rainChance = (body.currently.precipProbability)
-        callback(undefined, body.daily.data[0].summary + " It is currently " + temp + " degrees out.")
-        if (body.currently.temperature) {
-            
-        }
+        const temp1HourFromNow = (body.hourly.data[0].temperature)
+        const temp2HourFromNow = (body.hourly.data[1].temperature)
+        const rain
+        callback(undefined, body.daily.data[0].summary + " It is currently " + temp + " degrees out. \n " + "next hour: " + temp1HourFromNow )
+
     }
 })}
 
